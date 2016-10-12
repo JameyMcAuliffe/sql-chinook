@@ -37,6 +37,11 @@ JOIN Customer ON Invoice.CustomerId = Customer.CustomerId
 JOIN Employee ON Customer.SupportRepId = EmployeeId
 WHERE Employee.Title LIKE "%Agent%";
 
+8) Provide a query that shows the Invoice Total, Customer name, Country and Sale Agent name for all invoices and customers.
+
+SELECT Employee.FirstName || " " || Employee.LastName AS "Sales Agent", Invoice.Total, Customer.FirstName || " " || Customer.LastName AS "Customer Name", Customer.Country FROM Employee
+JOIN Customer ON Employee.EmployeeId = Customer.SupportRepId
+JOIN Invoice ON Customer.CustomerId = Invoice.CustomerId;
 
 
 
