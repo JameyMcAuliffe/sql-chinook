@@ -30,6 +30,14 @@ SELECT * FROM Invoice
 JOIN Customer ON Invoice.CustomerId = Customer.CustomerId
 WHERE Customer.Country = "Brazil";
 
+7) Provide a query that shows the invoices associated with each sales agent. The resultant table should include the Sales Agent's full name.
+
+SELECT Employee.FirstName || " " || Employee.LastName AS "Sales Agent", Invoice.* FROM Invoice
+JOIN Customer ON Invoice.CustomerId = Customer.CustomerId
+JOIN Employee ON Customer.SupportRepId = EmployeeId
+WHERE Employee.Title LIKE "%Agent%";
+
+
 
 
 
