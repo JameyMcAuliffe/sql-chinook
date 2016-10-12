@@ -13,3 +13,8 @@ WHERE Country = "Brazil";
 SELECT Customer.FirstName || " " || Customer.LastName AS "Name", InvoiceId, InvoiceDate, BillingCountry FROM Invoice
 JOIN Customer ON Invoice.CustomerId = Customer.CustomerId
 WHERE Customer.Country = "Brazil";
+
+4) Provide a query showing only the Employees who are Sales Agents.
+
+SELECT * FROM Employee
+WHERE Title LIKE "%Agent%";
