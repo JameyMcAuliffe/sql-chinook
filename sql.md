@@ -59,6 +59,11 @@ Where Invoice.InvoiceDate LIKE "2011%";
 SELECT Count(*) FROM InvoiceLine
 WHERE InvoiceId = "37";
 
+11) Looking at the InvoiceLine table, provide a query that COUNTs the number of line items for each Invoice. HINT: GROUP BY
+
+SELECT Count(*) FROM InvoiceLine
+GROUP BY InvoiceLine.InvoiceId;
+
 
 
 
