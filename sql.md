@@ -23,3 +23,14 @@ WHERE Title LIKE "%Agent%";
 
 SELECT BillingCountry FROM Invoice
 GROUP BY BillingCountry;
+
+6) Provide a query showing the invoices of customers who are from Brazil.
+
+SELECT * FROM Invoice
+JOIN Customer ON Invoice.CustomerId = Customer.CustomerId
+WHERE Customer.Country = "Brazil";
+
+
+
+
+
