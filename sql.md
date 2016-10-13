@@ -94,6 +94,11 @@ JOIN Album ON Track.AlbumId = Album.AlbumId
 JOIN MediaType ON Track.MediaTypeId = MediaType.MediaTypeId
 JOIN Genre ON Track.GenreId = Genre.GenreId;
 
+17) Provide a query that shows all Invoices but includes the # of invoice line items.
+
+SELECT * FROM Invoice;
+SELECT Count(*) FROM InvoiceLine;
+
 
 
 
