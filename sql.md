@@ -127,6 +127,15 @@ GROUP BY Customer.SupportRepId
 ORDER BY Sum(Invoice.Total) DESC
 LIMIT 1;
 
+21) Which sales agent made the most in sales over all?
+
+SELECT Employee.FirstName || " " || Employee.LastName AS "Sales Agent" FROM Employee
+JOIN Customer ON Employee.EmployeeId = Customer.SupportRepId
+JOIN Invoice ON Customer.CustomerId = Invoice.CustomerId
+GROUP BY Customer.SupportRepId
+ORDER BY Sum(Invoice.Total) DESC
+LIMIT 1;
+
 
 
 
