@@ -167,6 +167,16 @@ GROUP BY Track.Name
 ORDER BY "Sold" DESC
 LIMIT 5;
 
+26) Provide a query that shows the top 3 best selling artists.
+
+SELECT Artist.Name, Sum(InvoiceLine.Quantity) AS "Tracks Sold" FROM Artist
+JOIN Album ON Artist.ArtistId = Album.ArtistId
+JOIN Track ON Album.AlbumId = Track.AlbumId
+JOIN InvoiceLine ON Track.TrackId = InvoiceLine.TrackId
+GROUP BY Artist.Name
+ORDER BY "Tracks Sold" DESC
+LIMIT 3;
+
 
 
 
