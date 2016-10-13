@@ -76,6 +76,11 @@ JOIN Track ON InvoiceLine.TrackId = Track.TrackId
 JOIN Album ON Track.AlbumId = Album.AlbumId
 JOIN Artist ON Album.ArtistId = Artist.ArtistId;
 
+14) Provide a query that shows the # of invoices per country. HINT: GROUP BY
+
+SELECT BillingCountry, Count(*) FROM Invoice
+GROUP BY BillingCountry;
+
 
 
 
