@@ -177,6 +177,15 @@ GROUP BY Artist.Name
 ORDER BY "Tracks Sold" DESC
 LIMIT 3;
 
+27) Provide a query that shows the most purchased Media Type.
+
+SELECT MediaType.Name, Sum(InvoiceLine.Quantity) AS "Amount Media Sold" FROM MediaType
+JOIN Track ON MediaType.MediaTypeId = Track.MediaTypeId
+JOIN InvoiceLine ON Track.TrackId = InvoiceLine.TrackId
+GROUP BY MediaType.Name
+ORDER BY "Amount Media Sold" DESC
+LIMIT 1;
+
 
 
 
