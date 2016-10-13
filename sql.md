@@ -136,6 +136,12 @@ GROUP BY Customer.SupportRepId
 ORDER BY Sum(Invoice.Total) DESC
 LIMIT 1;
 
+22) Provide a query that shows the # of customers assigned to each sales agent.
+
+SELECT Employee.FirstName || " " || Employee.LastName AS "Sales Agent", Count(*) FROM Customer
+JOIN Employee ON Customer.SupportRepId = Employee.EmployeeId
+GROUP BY Customer.SupportRepId;
+
 
 
 
