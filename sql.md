@@ -99,6 +99,14 @@ JOIN Genre ON Track.GenreId = Genre.GenreId;
 SELECT * FROM Invoice;
 SELECT Count(*) FROM InvoiceLine;
 
+18) Provide a query that shows total sales made by each sales agent.
+
+SELECT Employee.FirstName || " " || Employee.LastName AS "Sales Agent", Sum(Invoice.Total) FROM Employee
+JOIN Customer ON Employee.EmployeeId = Customer.SupportRepId
+JOIN Invoice ON Customer.CustomerId = Invoice.CustomerId
+WHERE Employee.Title LIKE "%Agent%"
+GROUP BY Customer.SupportRepId;
+
 
 
 
