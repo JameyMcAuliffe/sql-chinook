@@ -117,6 +117,16 @@ GROUP BY Customer.SupportRepId
 ORDER BY Sum(Invoice.Total) DESC
 LIMIT 1;
 
+20) Which sales agent made the most in sales in 2010?
+
+SELECT Employee.FirstName || " " || Employee.LastName AS "Sales Agent" FROM Employee
+JOIN Customer ON Employee.EmployeeId = Customer.SupportRepId
+JOIN Invoice ON Customer.CustomerId = Invoice.CustomerId
+WHERE Invoice.InvoiceDate LIKE "2010%"
+GROUP BY Customer.SupportRepId
+ORDER BY Sum(Invoice.Total) DESC
+LIMIT 1;
+
 
 
 
